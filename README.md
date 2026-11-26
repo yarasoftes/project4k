@@ -4,7 +4,7 @@
 
 ## 📖 О проекте
 Данный проект представляет собой веб-приложение для обмена текстовыми сообщениями в реальном времени. 
-Цель проекта — освоить командную разработку, работу с Git/GitHub, верстку адаптивных интерфейсов и интеграцию с базой данных.
+Цель проекта — освоить командную разработку, работу с Git/GitHub, верстку адаптивных интерфейсов и интеграцию с облачной базой данных.
 
 ## 🚀 Функционал (MVP)
 - [x] Регистрация и авторизация пользователей (Email/Пароль).
@@ -16,22 +16,37 @@
 
 ## 🛠 Технологический стек
 - **Frontend:** HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+).
-- **Backend / База данных:** Firebase (Authentication & Firestore).
-- **Инструменты:** Git, GitHub, GitHub Projects (для управления задачами).
+- **Backend / База данных:** Firebase (Authentication, Firestore NoSQL Database, Realtime updates).
+- **Инструменты:** Git, GitHub, GitHub Projects (управление задачами), VS Code (Live Server).
 
 ## 👥 Команда проекта
 - **Лидер / Ревьюер / Интегратор:** [yarasoftes](https://github.com/yarasoftes)
-- **Frontend-разработчик (Верстка, UI):** [quickstown](https://github.com/quickstown)
-- **Backend-разработчик (Логика, Firebase):** [chetirka82](https://github.com/chetirka82)
+- **Frontend-разработчик (Верстка, UI/UX):** [quickstown](https://github.com/quickstown)
+- **Backend-разработчик (Логика, База данных):** [chetirka82](https://github.com/chetirka82)
 
 ## 📁 Структура проекта
 ```text
 /project-root
 │
-├── index.html          # Главная страница (вход/регистрация, чат)
-├── css/
-│   └── style.css       # Стили проекта
-├── js/
-│   └── script.js       # Логика работы (взаимодействие с Firebase)
-├── img/                # Иконки, аватарки, логотипы
-└── README.md           # Этот файл
+├── index.html              # Главная точка входа (SPA)
+├── README.md               # Документация проекта
+│
+├── /assets                 # Статические ресурсы
+│   ├── /css
+│   │   ├── style.css       # Основные стили (верстка Наиля)
+│   │   └── components.css  # Стили для отдельных элементов (кнопки, чаты)
+│   └── /img                # Иконки, аватарки (заглушки), логотипы
+│
+├── /src                    # Исходный код приложения
+│   ├── /config
+│   │   └── firebase.js     # Настройки и инициализация Firebase (ключи Сани)
+│   ├── /services
+│   │   ├── auth.js         # Логика регистрации и входа (Firebase Auth)
+│   │   └── db.js           # Логика работы с базой данных (Firestore)
+│   ├── /ui
+│   │   ├── chatUI.js       # Отрисовка пузырьков чата, скролл
+│   │   └── modal.js        # Логика всплывающих окон
+│   └── main.js             # Главный скрипт, связывающий всё вместе
+│
+└── /docs                   # Вся документация по проекту
+    └── database_schema.md  # Описание структуры базы данных (коллекции)
